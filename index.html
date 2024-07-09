@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <span>ROCK</span>
+        <span>PAPER</span>
+        <span>SCISSORS</span>
+      </div>
+      <div class="scoreContainer">
+        <div class="text">SCORE</div>
+        <div class="score">0</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="options">
+        <div id="rock" class="rock">
+          <img src="images/icon-rock.svg" alt="" />
+        </div>
+        <div id="paper" class="paper">
+          <img src="images/icon-paper.svg" alt="" />
+        </div>
+        <div id="scissors" class="scissors">
+          <img src="images/icon-scissors.svg" alt="" />
+        </div>
+      </div>
+    </main>
+
+    <button class="rules">RULES</button>
+
+    <div class="modal">
+      <div class="version">
+        <h1>Rules</h1>
+        <button class="close">
+          <img src="images/icon-close.svg" alt="" />
+        </button>
+      </div>
+      <img src="images/image-rules.svg" alt="" />
+    </div>
+
+    <div class="contest">
+      <div class="userhand">
+        <h1>YOU PICKED</h1>
+        <div class="userImage">
+          <img id="userPickImage" src="images/icon-paper.svg" />
+        </div>
+      </div>
+      <div class="referee">
+        <div class="decision"><h1>YOU WIN!</h1></div>
+        <button class="newGame">PLAY AGAIN</button>
+      </div>
+      <div class="computerhand">
+        <h1>THE HOUSE PICKED</h1>
+        <div class="computerImage">
+          <img id="computerPickImage" src="images/icon-paper.svg" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed";
+}
+:root {
+  --darkText: hsl(229, 25%, 31%);
+  --scoreText: hsl(229, 64%, 46%);
+  --headerOutline: hsl(217, 16%, 45%);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+body {
+  height: 100vh;
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+header {
+  border: 2px solid var(--headerOutline);
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-inline: 1.5rem;
+  width: 70vw;
+  height: 25vh;
+  margin-inline: auto;
+}
+
+.content > span {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -20px;
+}
+.content {
+  margin-top: -15px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+header > * {
+  align-self: center;
+}
+.scoreContainer {
+  background-color: #ccc;
+  height: 80%;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  color: var(--scoreText);
+  letter-spacing: 2px;
+}
+.scoreContainer > * {
+  align-self: center;
+}
+
+.score {
+  color: var(--darkText);
+  font-size: 4rem;
+}
+
+main {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contest {
+  display: none;
+}
+
+.options > div {
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 125px;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 350ms;
+}
+
+.rock {
+  border: 15px solid hsl(349, 71%, 52%);
+  position: absolute;
+  top: -30px;
+}
+
+.paper {
+  border: 15px solid hsl(230, 89%, 62%);
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+
+.scissors {
+  border: 15px solid hsl(39, 89%, 49%);
+  position: absolute;
+  bottom: -10px;
+  right: 32%;
+}
+
+.options {
+  position: relative;
+  background-image: url(images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 350px;
+  height: 300px;
+}
+
+.options > div:hover {
+  transform: translateY(-10px);
+  transition: transform 350ms;
+}
+
+.rules {
+  letter-spacing: 2px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 0.4rem 2rem;
+  color: white;
+  position: absolute;
+  right: 5%;
+  transition: background-color 250ms, color 250ms;
+  cursor: pointer;
+}
+
+.rules:hover {
+  background-color: white;
+  color: black;
+  transition: background-color 250ms, color 250ms;
+}
+
+.modal {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 20px;
+  transition: all 150ms;
+}
+
+.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal h1 {
+  align-self: flex-start;
+  margin-left: 20px;
+  color: var(--scoreText);
+}
+.version {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-inline: 2rem;
+}
+
+.modal button {
+  letter-spacing: 2px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.contest {
+  color: white;
+}
+
+.userImage,
+.computerImage {
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 125px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.contest {
+  margin-inline: auto;
+  display: flex;
+  width: 800px;
+  padding-block: 2rem;
+  gap: 2rem;
+  margin-top: 50px;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.referee {
+  align-self: center;
+}
+.decision {
+  font-size: 2rem;
+}
+
+.userhand,
+.computerhand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.userhand h1,
+.computerhand h1 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.newGame {
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 0.6rem 2rem;
+  font-size: 1.2rem;
+  transition: all 350ms ease;
+  cursor: pointer;
+}
+.newGame:hover {
+  background-color: white;
+  color: black;
+  transition: all 350ms ease;
+}
+
+.referee {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
